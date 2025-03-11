@@ -143,5 +143,10 @@ namespace Lab1
         {
 
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -117,7 +117,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form3";
-            Text = "Form3";
+            Text = "BaiTH3";
+            Load += Form3_Load;
             ResumeLayout(false);
             PerformLayout();
         }

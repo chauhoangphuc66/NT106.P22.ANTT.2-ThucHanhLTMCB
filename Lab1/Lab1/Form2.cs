@@ -40,5 +40,26 @@ namespace Lab1
         {
             Application.Exit();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Bai2 form1 = new Bai2();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Bai4 form1 = new Bai4();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form4 form1 = new Form4();
+            form1.Show();
+            this.Hide();
+        }
     }
 }
