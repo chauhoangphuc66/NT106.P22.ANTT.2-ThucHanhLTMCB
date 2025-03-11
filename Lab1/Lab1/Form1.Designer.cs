@@ -90,6 +90,7 @@
             label3.Size = new Size(60, 20);
             label3.TabIndex = 6;
             label3.Text = "Kết quả";
+            label3.Click += label3_Click;
             // 
             // btnSum
             // 
