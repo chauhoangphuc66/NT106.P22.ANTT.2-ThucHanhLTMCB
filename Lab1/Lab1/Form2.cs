@@ -19,7 +19,9 @@ namespace Lab1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +33,12 @@ namespace Lab1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
