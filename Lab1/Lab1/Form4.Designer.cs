@@ -45,6 +45,7 @@
             sHocLuc = new TextBox();
             dMin = new TextBox();
             iNumRot = new TextBox();
+            exit = new Button();
             SuspendLayout();
             // 
             // groupBox1
@@ -53,7 +54,7 @@
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(656, 146);
+            groupBox1.Size = new Size(656, 172);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Danh sách môn học và điểm";
@@ -90,7 +91,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(20, 266);
+            label3.Location = new Point(22, 333);
             label3.Name = "label3";
             label3.Size = new Size(97, 15);
             label3.TabIndex = 4;
@@ -100,7 +101,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(20, 304);
+            label4.Location = new Point(22, 371);
             label4.Name = "label4";
             label4.Size = new Size(130, 15);
             label4.TabIndex = 5;
@@ -109,7 +110,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(20, 342);
+            label5.Location = new Point(22, 409);
             label5.Name = "label5";
             label5.Size = new Size(74, 15);
             label5.TabIndex = 6;
@@ -118,7 +119,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(415, 266);
+            label6.Location = new Point(417, 333);
             label6.Name = "label6";
             label6.Size = new Size(94, 15);
             label6.TabIndex = 7;
@@ -127,7 +128,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(415, 304);
+            label7.Location = new Point(417, 371);
             label7.Name = "label7";
             label7.Size = new Size(135, 15);
             label7.TabIndex = 8;
@@ -136,7 +137,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(415, 342);
+            label8.Location = new Point(417, 409);
             label8.Name = "label8";
             label8.Size = new Size(111, 15);
             label8.TabIndex = 9;
@@ -155,7 +156,7 @@
             // 
             // dAvg
             // 
-            dAvg.Location = new Point(138, 266);
+            dAvg.Location = new Point(140, 333);
             dAvg.Margin = new Padding(3, 2, 3, 2);
             dAvg.Name = "dAvg";
             dAvg.Size = new Size(110, 23);
@@ -164,7 +165,7 @@
             // 
             // dMax
             // 
-            dMax.Location = new Point(166, 302);
+            dMax.Location = new Point(168, 369);
             dMax.Margin = new Padding(3, 2, 3, 2);
             dMax.Name = "dMax";
             dMax.Size = new Size(110, 23);
@@ -173,7 +174,7 @@
             // 
             // iNumDau
             // 
-            iNumDau.Location = new Point(106, 342);
+            iNumDau.Location = new Point(108, 409);
             iNumDau.Margin = new Padding(3, 2, 3, 2);
             iNumDau.Name = "iNumDau";
             iNumDau.Size = new Size(110, 23);
@@ -182,7 +183,7 @@
             // 
             // sHocLuc
             // 
-            sHocLuc.Location = new Point(524, 263);
+            sHocLuc.Location = new Point(526, 330);
             sHocLuc.Margin = new Padding(3, 2, 3, 2);
             sHocLuc.Name = "sHocLuc";
             sHocLuc.Size = new Size(110, 23);
@@ -191,7 +192,7 @@
             // 
             // dMin
             // 
-            dMin.Location = new Point(566, 302);
+            dMin.Location = new Point(568, 369);
             dMin.Margin = new Padding(3, 2, 3, 2);
             dMin.Name = "dMin";
             dMin.Size = new Size(110, 23);
@@ -200,18 +201,29 @@
             // 
             // iNumRot
             // 
-            iNumRot.Location = new Point(534, 340);
+            iNumRot.Location = new Point(536, 407);
             iNumRot.Margin = new Padding(3, 2, 3, 2);
             iNumRot.Name = "iNumRot";
             iNumRot.Size = new Size(110, 23);
             iNumRot.TabIndex = 16;
             iNumRot.TextChanged += iNumRot_TextChanged;
             // 
+            // exit
+            // 
+            exit.Location = new Point(307, 448);
+            exit.Name = "exit";
+            exit.Size = new Size(75, 23);
+            exit.TabIndex = 17;
+            exit.Text = "Thoát";
+            exit.UseVisualStyleBackColor = true;
+            exit.Click += exit_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 434);
+            ClientSize = new Size(700, 483);
+            Controls.Add(exit);
             Controls.Add(iNumRot);
             Controls.Add(dMin);
             Controls.Add(sHocLuc);
@@ -231,7 +243,7 @@
             Controls.Add(groupBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form4";
-            Text = "Form4";
+            Text = "Phan mem quan ly diem";
             Load += Form4_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -256,5 +268,6 @@
         private TextBox sHocLuc;
         private TextBox dMin;
         private TextBox iNumRot;
+        private Button exit;
     }
 }

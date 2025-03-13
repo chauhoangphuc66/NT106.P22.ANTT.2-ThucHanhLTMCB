@@ -14,6 +14,13 @@ namespace Lab1
         public Form4()
         {
             InitializeComponent();
+            dAvg.ReadOnly = true;
+            dMax.ReadOnly = true;
+            dMin.ReadOnly = true;
+            sHocLuc.ReadOnly = true;
+            iNumDau.ReadOnly = true;
+            iNumRot.ReadOnly = true;
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -63,7 +70,7 @@ namespace Lab1
                 {
                     listBoxPoints.Items.Add($"Môn {i + 1}: {pointValues[i]} điểm");
                 }
- 
+
                 CalculateStatistics(pointValues);
             }
             catch (FormatException)
@@ -80,7 +87,7 @@ namespace Lab1
             float max = points.Max();
             dMax.Text = max.ToString("F2");
 
-  
+
             float min = points.Min();
             dMin.Text = min.ToString("F2");
 
@@ -106,8 +113,11 @@ namespace Lab1
         private void Form4_Load(object sender, EventArgs e)
         {
             listBoxPoints = new ListBox();
-            listBoxPoints.Location = new Point(0, 20);
-            listBoxPoints.Size = new Size(2000, 1000);
+            listBoxPoints.Location = new Point(10, 20);
+            listBoxPoints.Size = new Size(groupBox1.Width - 10, 150); // Điều chỉnh chiều cao phù hợp
+            listBoxPoints.MultiColumn = true; // Thiết lập hiển thị nhiều cột
+            listBoxPoints.ColumnWidth = 120; // Thiết lập độ rộng của mỗi cột
+            listBoxPoints.HorizontalScrollbar = true; // Cho phép cuộn ngang nếu cần
             groupBox1.Controls.Add(listBoxPoints);
         }
 
@@ -151,6 +161,13 @@ namespace Lab1
         private void iNumRot_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
         }
     }
 }

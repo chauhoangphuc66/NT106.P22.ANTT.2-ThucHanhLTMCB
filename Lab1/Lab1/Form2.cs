@@ -61,5 +61,10 @@ namespace Lab1
             form1.Show();
             this.Hide();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
