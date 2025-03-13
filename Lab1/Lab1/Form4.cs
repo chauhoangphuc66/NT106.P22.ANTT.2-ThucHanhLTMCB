@@ -49,7 +49,7 @@ namespace Lab1
 
                 float[] pointValues = points.Select(p => float.Parse(p.Trim())).ToArray();
 
-                foreach (int point in pointValues)
+                foreach (float point in pointValues)
                 {
                     if (point < 0 || point > 10)
                     {
@@ -63,6 +63,8 @@ namespace Lab1
                 {
                     listBoxPoints.Items.Add($"Môn {i + 1}: {pointValues[i]} điểm");
                 }
+ 
+                CalculateStatistics(pointValues);
             }
             catch (FormatException)
             {
@@ -70,16 +72,45 @@ namespace Lab1
             }
         }
 
+        private void CalculateStatistics(float[] points)
+        {
+            float avg = points.Average();
+            dAvg.Text = avg.ToString("F2");
+
+            float max = points.Max();
+            dMax.Text = max.ToString("F2");
+
+  
+            float min = points.Min();
+            dMin.Text = min.ToString("F2");
+
+            int passing = points.Count(p => p >= 5.0);
+            int failing = points.Length - passing;
+
+            iNumDau.Text = passing.ToString();
+            iNumRot.Text = failing.ToString();
+
+            string hocLuc = "";
+            if (avg >= 8.0)
+                hocLuc = "Giỏi";
+            else if (avg >= 6.5)
+                hocLuc = "Khá";
+            else if (avg >= 5.0)
+                hocLuc = "Trung bình";
+            else
+                hocLuc = "Yếu";
+
+            sHocLuc.Text = hocLuc;
+        }
+
         private void Form4_Load(object sender, EventArgs e)
         {
-            // Khởi tạo ListBox trong GroupBox
             listBoxPoints = new ListBox();
             listBoxPoints.Location = new Point(0, 20);
             listBoxPoints.Size = new Size(2000, 1000);
             groupBox1.Controls.Add(listBoxPoints);
         }
 
-        // Khai báo ListBox để hiển thị điểm
         private ListBox listBoxPoints;
 
         private void sInput_TextChanged(object sender, EventArgs e)
@@ -91,7 +122,35 @@ namespace Lab1
         {
 
         }
+
+        private void dAvg_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dMax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNumDau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sHocLuc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dMin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNumRot_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
-
