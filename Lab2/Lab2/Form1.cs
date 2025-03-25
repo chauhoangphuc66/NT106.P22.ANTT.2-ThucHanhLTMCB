@@ -40,7 +40,7 @@
                         int wordCount = content.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
                         int lineCount = content.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None).Length;
                         int charCount = content.Length;
-                        outputBox.Text = content;
+                        outputBox.Text = string.Join(Environment.NewLine, content.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None));
                         fileName.Text = Path.GetFileName(filePath);
                         fileURL.Text = filePath;
                         fileRow.Text = lineCount.ToString();
