@@ -38,10 +38,10 @@
                     {
                         string content = sr.ReadToEnd();
                         int wordCount = content.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
-                        int lineCount = content.Split(new char[] { '\n' }).Length;
+                        content = content.Replace("\r\n", "\n").TrimEnd('\n');
+                        int lineCount = content.Split('\n').Length;
                         int charCount = content.Length;
-
-                        outputBox.Text = content ;
+                        outputBox.Text = string.Join(Environment.NewLine, content.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None));
                         fileName.Text = Path.GetFileName(filePath);
                         fileURL.Text = filePath;
                         fileRow.Text = lineCount.ToString();
