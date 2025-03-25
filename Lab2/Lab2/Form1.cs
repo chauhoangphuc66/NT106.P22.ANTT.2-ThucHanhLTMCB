@@ -10,7 +10,7 @@
             fileURL.ReadOnly = true;
             fileWord.ReadOnly = true;
             fileRow.ReadOnly = true;
-            outputBox.ReadOnly = true;
+            richTextBox1.ReadOnly = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,13 +35,15 @@
                 {
                     string filePath = openFileDialog.FileName;
                     using (StreamReader sr = new StreamReader(filePath))
-                    {
+                    { 
                         string content = sr.ReadToEnd();
-                        int wordCount = content.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Length;
-                        content = content.Replace("\r\n", "\n").TrimEnd('\n');
-                        int lineCount = content.Split('\n').Length;
+                        richTextBox1.Text = content;
                         int charCount = content.Length;
-                        outputBox.Text = string.Join(Environment.NewLine, content.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None));
+                        content = content.Replace("\r\n", " ");
+                        int lineCount = richTextBox1.Lines.Count();
+                        content = content.Replace("\n", " ");
+                        string[] source = content.Split(new char[] { ' ', '.', '?', '!', ',', ';', ':', '-', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        int wordCount = source.Count();
                         fileName.Text = Path.GetFileName(filePath);
                         fileURL.Text = filePath;
                         fileRow.Text = lineCount.ToString();
@@ -54,6 +56,16 @@
             {
                 MessageBox.Show("File này không thể đọc" + ex.Message);
             }
+        }
+
+        private void outputBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

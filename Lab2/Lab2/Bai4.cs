@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lab2
 {
-    public partial class Bai4: Form
+    public partial class Bai4 : Form
     {
         public Bai4()
         {
             InitializeComponent();
+        }
+
+        private void Bai4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

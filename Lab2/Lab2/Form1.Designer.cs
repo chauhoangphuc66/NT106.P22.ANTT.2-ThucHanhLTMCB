@@ -39,7 +39,7 @@
             fileRow = new TextBox();
             fileWord = new TextBox();
             fileChar = new TextBox();
-            outputBox = new TextBox();
+            richTextBox1 = new RichTextBox();
             SuspendLayout();
             // 
             // button1
@@ -134,20 +134,21 @@
             fileChar.Size = new Size(272, 27);
             fileChar.TabIndex = 10;
             // 
-            // outputBox
+            // richTextBox1
             // 
-            outputBox.Location = new Point(356, 12);
-            outputBox.Multiline = true;
-            outputBox.Name = "outputBox";
-            outputBox.Size = new Size(432, 426);
-            outputBox.TabIndex = 11;
+            richTextBox1.Location = new Point(356, 12);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(443, 411);
+            richTextBox1.TabIndex = 11;
+            richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(outputBox);
+            Controls.Add(richTextBox1);
             Controls.Add(fileChar);
             Controls.Add(fileWord);
             Controls.Add(fileRow);
@@ -178,6 +179,6 @@
         private TextBox fileRow;
         private TextBox fileWord;
         private TextBox fileChar;
-        private TextBox outputBox;
+        private RichTextBox richTextBox1;
     }
 }
