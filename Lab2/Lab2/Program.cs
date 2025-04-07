@@ -1,4 +1,3 @@
-using LAB2;
 
 namespace Lab2
 {
@@ -13,7 +12,7 @@ namespace Lab2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Bai04());
+            Application.Run(new frmB4());
         }
     }
 }
