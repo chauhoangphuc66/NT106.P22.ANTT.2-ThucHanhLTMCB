@@ -53,5 +53,11 @@ namespace Lab2
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Lab2
 {
@@ -39,9 +40,16 @@ namespace Lab2
             SaveFileDialog sfd = new SaveFileDialog();
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                    File.WriteAllText(sfd.FileName, textBox1.Text);
-                    MessageBox.Show("Ghi file thành công!", "Thông báo");
+                File.WriteAllText(sfd.FileName, textBox1.Text);
+                MessageBox.Show("Ghi file thành công!", "Thông báo");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
         }
     }
 }

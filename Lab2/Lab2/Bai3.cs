@@ -69,7 +69,7 @@ namespace Lab2
                     {
                         foreach (string line in lines)
                         {
-                            if(string.IsNullOrWhiteSpace(line))
+                            if (string.IsNullOrWhiteSpace(line))
                             {
                                 continue;
                             }
@@ -141,6 +141,13 @@ namespace Lab2
             string calculationResult = $"{operand1} {operation} {operand2} = {result}";
 
             return calculationResult;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
         }
     }
 }

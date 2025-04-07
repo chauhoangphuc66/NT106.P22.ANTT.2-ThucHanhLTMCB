@@ -110,5 +110,11 @@ namespace Lab2
             str.Close();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
+        }
     }
 }

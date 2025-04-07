@@ -35,7 +35,7 @@
                 {
                     string filePath = openFileDialog.FileName;
                     using (StreamReader sr = new StreamReader(filePath))
-                    { 
+                    {
                         string content = sr.ReadToEnd();
                         richTextBox1.Text = content;
                         int charCount = content.Length;
@@ -66,6 +66,13 @@
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
         }
     }
 }

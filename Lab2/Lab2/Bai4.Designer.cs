@@ -28,65 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.grpb = new System.Windows.Forms.GroupBox();
-            this.rtbHocVien = new System.Windows.Forms.RichTextBox();
-            this.grpb.SuspendLayout();
-            this.SuspendLayout();
+            button1 = new Button();
+            button2 = new Button();
+            grpb = new GroupBox();
+            rtbHocVien = new RichTextBox();
+            button3 = new Button();
+            grpb.SuspendLayout();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(47, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 80);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "INPUT FILE";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(27, 25);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(135, 48);
+            button1.TabIndex = 0;
+            button1.Text = "INPUT FILE";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(390, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 80);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "OUTPUT FILE";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(227, 25);
+            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(135, 48);
+            button2.TabIndex = 1;
+            button2.Text = "OUTPUT FILE";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // grpb
             // 
-            this.grpb.Controls.Add(this.rtbHocVien);
-            this.grpb.Location = new System.Drawing.Point(47, 176);
-            this.grpb.Name = "grpb";
-            this.grpb.Size = new System.Drawing.Size(575, 685);
-            this.grpb.TabIndex = 2;
-            this.grpb.TabStop = false;
-            this.grpb.Text = "Danh sách học viên";
+            grpb.Controls.Add(rtbHocVien);
+            grpb.Location = new Point(27, 106);
+            grpb.Margin = new Padding(2, 2, 2, 2);
+            grpb.Name = "grpb";
+            grpb.Padding = new Padding(2, 2, 2, 2);
+            grpb.Size = new Size(335, 411);
+            grpb.TabIndex = 2;
+            grpb.TabStop = false;
+            grpb.Text = "Danh sách học viên";
             // 
             // rtbHocVien
             // 
-            this.rtbHocVien.AcceptsTab = true;
-            this.rtbHocVien.Location = new System.Drawing.Point(0, 37);
-            this.rtbHocVien.Name = "rtbHocVien";
-            this.rtbHocVien.Size = new System.Drawing.Size(574, 648);
-            this.rtbHocVien.TabIndex = 0;
-            this.rtbHocVien.Text = "";
+            rtbHocVien.AcceptsTab = true;
+            rtbHocVien.Location = new Point(0, 22);
+            rtbHocVien.Margin = new Padding(2, 2, 2, 2);
+            rtbHocVien.Name = "rtbHocVien";
+            rtbHocVien.Size = new Size(336, 390);
+            rtbHocVien.TabIndex = 0;
+            rtbHocVien.Text = "";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(158, 78);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 3;
+            button3.Text = "Quay lại";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // frmB4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 937);
-            this.Controls.Add(this.grpb);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "frmB4";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BÀI 4";
-            this.grpb.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(394, 562);
+            Controls.Add(button3);
+            Controls.Add(grpb);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "frmB4";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "BÀI 4";
+            grpb.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -96,5 +114,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox grpb;
         private System.Windows.Forms.RichTextBox rtbHocVien;
+        private Button button3;
     }
 }
