@@ -116,5 +116,10 @@ namespace Lab2
             form.Show();
             this.Hide();
         }
+
+        private void frmB4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
