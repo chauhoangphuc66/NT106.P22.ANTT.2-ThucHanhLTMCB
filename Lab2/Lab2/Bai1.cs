@@ -20,29 +20,64 @@ namespace Lab2
 
         private void Read_btn_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt; *.docx; *.csv; *.doc)|*.txt;*.docx;*.csv; *.doc|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                string filePath = openFileDialog.FileName;
                 try
                 {
-                    string content = File.ReadAllText(ofd.FileName);
-                    textBox1.Text = content;
+                    // Kiểm tra loại tệp đã chọn
+                    string extension = Path.GetExtension(filePath).ToLower();
+                    string[] NotAllow = { ".zip", ".jpg", ".png", ".pdf", ".rar", ".sln" }; // Thêm các phần mở rộng khác nếu cần
+                    if (NotAllow.Contains(extension))
+                    {
+                        MessageBox.Show("Không phải là file văn bản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        string content = File.ReadAllText(filePath);
+                        textBox1.Text = content;
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi khi đọc file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Không thể đọc file: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
+            else
+                MessageBox.Show("Không thể mở File Explorer ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void Write_btn_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Không có nội dung để ghi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(sfd.FileName, textBox1.Text);
-                MessageBox.Show("Ghi file thành công!", "Thông báo");
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                    {
+                        string content = textBox1.Text.ToUpper(); // Chuyển đổi thành chữ in hoa
+                        sw.Write(content);
+                    }
+                    MessageBox.Show($"Đã xử lý và ghi kết quả vào file {sfd.FileName}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Không thể xử lý và ghi kết quả: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            else
+                MessageBox.Show("Không thể mở File Explorer ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -59,5 +59,10 @@ namespace Lab2
             form.Show();
             this.Hide();
         }
+
+        private void Bai5_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
