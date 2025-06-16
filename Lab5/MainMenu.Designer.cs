@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label1 = new Label();
             bai1_button = new Button();
             bai2_button = new Button();
@@ -40,15 +39,16 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(339, 25);
+            label1.Location = new Point(210, 9);
             label1.Name = "label1";
-            label1.Size = new Size(112, 20);
+            label1.Size = new Size(43, 20);
             label1.TabIndex = 0;
-            label1.Text = "Nhóm 1 - Lab 5";
+            label1.Text = "LAB5";
+            label1.Click += label1_Click;
             // 
             // bai1_button
             // 
-            bai1_button.Location = new Point(43, 70);
+            bai1_button.Location = new Point(71, 47);
             bai1_button.Name = "bai1_button";
             bai1_button.Size = new Size(157, 57);
             bai1_button.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // bai2_button
             // 
-            bai2_button.Location = new Point(263, 70);
+            bai2_button.Location = new Point(234, 47);
             bai2_button.Name = "bai2_button";
             bai2_button.Size = new Size(157, 57);
             bai2_button.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // bai3_button
             // 
-            bai3_button.Location = new Point(156, 154);
+            bai3_button.Location = new Point(156, 110);
             bai3_button.Name = "bai3_button";
             bai3_button.Size = new Size(157, 57);
             bai3_button.TabIndex = 3;
@@ -80,7 +80,6 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(463, 245);
             Controls.Add(bai3_button);
             Controls.Add(bai2_button);

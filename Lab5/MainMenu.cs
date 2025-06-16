@@ -25,5 +25,10 @@ namespace LAB5
             Bai3 Bai3 = new Bai3();
             Bai3.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
